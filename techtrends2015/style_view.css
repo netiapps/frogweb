@@ -1,0 +1,26 @@
+.container{
+  min-width: 1700px;
+}
+
+.clearfix{
+  clear: both;
+}
+.row{
+  clear: both;
+}
+
+.col.row-name{
+  width: 120px;
+}
+.col{
+  float: left;
+width: 70px;
+height: 70px;
+line-height: 70px;
+border: 1px solid black;
+text-align: center;
+}
+
+.even .col{
+  background-color: #f5f5f5;
+}

@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Template index</title>
+		<style>
+			{literal}
+			* { border:0; margin:0; padding:0; }
+			body { background:rgba(255,255,255,1); color:rgba(0,0,0,1); font-family: sans-serif; font-size:62.5%; }
+			
+			a { color:rgba(68,105,125,1); text-decoration: none; }
+			a:hover { color:rgba(146,162,189,1); text-decoration: underline; }
+			
+			.btn, .btn:active, .btn:hover {
+				background:rgba(105,190,40,1);
+				border-radius:.5em;
+				border:1px solid rgba(105,190,40,1);
+				color:rgba(255,255,255,1);
+				display:block;
+				float:left;
+				font-size:.8em;
+				line-height:2em;
+				margin-right:20px;
+				padding:0 2em;
+				text-decoration:none;
+				text-transform:uppercase;
+				width:auto;
+				
+				-webkit-box-shadow: inset 1px 1px 2px 1px rgba(255, 255, 255, .1);
+				box-shadow: inset 1px 1px 2px 1px rgba(255, 255, 255, .1);
+			}
+			
+			.btn:hover {
+				background:rgba(52,178,51,1);
+			}
+			
+			.btn:active {
+				background:rgba(52,178,51,1);
+				
+				-webkit-box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, .1);
+				box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, .1);
+			}
+			
+			.btn-view, .btn-view:active, .btn-view:hover {
+				background:rgba(146,162,189,1);
+				border:1px solid rgba(146,162,189,1);
+			}
+			
+			.btn-view:hover {
+				background:rgba(68,105,125,1);
+			}
+			
+			.btn-view:active {}
+			
+			.btn-delete, .btn-delete:active, .btn-delete:hover {
+				background:rgba(235,128,36,1);
+				border:1px solid rgba(235,128,36,1);
+			}
+			
+			.btn-delete:hover {
+				background:rgba(205,32,44,1);
+			}
+			
+			.btn-delete:active {}
+			
+			header { background:rgba(165,216,103,1); width:100%; }
+			header h1 { color:rgba(255,255,255,1); line-height:3em; margin:0 auto; max-width:960px; text-transform:uppercase; width:80%; }
+			
+			.content { font-size:1.5em; height:auto; line-height:1.5em; margin:2em auto; max-width:960px; overflow:hidden; width:80%; }
+			.content ol { clear:both; float:none; margin:2em 2em 2em 2.5em; }
+			.content ol li { text-transform:capitalize; }
+			.content p { margin:2em 0; }
+			
+			.content .buttons { clear:both; float:none; height:auto; margin:2em 0; overflow:hidden; }
+			
+			footer { clear:both; font-size:1.5em; line-height:1.5em; margin:2em auto; max-width:960px; width:80%; }
+			{/literal}
+		</style>
+	</head>
+	<body>
+	
+	<header>
+		<h1>{$config->project}</h1>
+	</header>
+	
+	<section class="content">
+			
+		{if $command != 'output'}
+			<p class="buttons">
+				<a href="./?command=output" title="Generate html" class="btn btn-generate">Generate html</a>
+				{if $exported}
+					<a href="./_output/" class="btn btn-view">View generated HTML files</a>
+					{if $zipped}
+						<a href="./_output/templates.zip" class="btn btn-view">Download zip archive</a>
+					{/if}
+					<a href="./?command=delete" class="btn btn-delete">Delete generated HTML files</a>
+				{/if}
+			</p>
+		{/if}
+		
+		<ol>
+			{section name="page" loop=$pages}
+				{if $command == 'output'}
+					<li>
+						<a href="./{$pages[page]}" title="View template {$pages[page]|replace:'_':' '|replace:'.html':''|escape:quotes}">{$pages[page]|replace:'_':' '|replace:'.html':''}</a>
+					</li>
+				{else}
+					<li>
+						<a href="./?page={$pages[page]}" title="View template {$pages[page]|replace:'_':' '|replace:'.html':''|escape:quotes}">{$pages[page]|replace:'_':' '|replace:'.html':''}</a>
+					</li>
+				{/if}
+			{/section}
+		</ol>
+		
+		{if $command != 'output'}
+			<p class="buttons">
+				<a href="./?command=output" title="Generate html" class="btn btn-generate">Generate html</a>
+				{if $exported}
+					<a href="./_output/" class="btn btn-view">View generated HTML files</a>
+					{if $zipped}
+						<a href="./_output/templates.zip" class="btn btn-view">Download zip archive</a>
+					{/if}
+					<a href="./?command=delete" class="btn btn-delete">Delete generated HTML files</a>
+				{/if}
+			</p>
+		{/if}
+	
+		
+	</section>
+	
+	<footer>
+		<p><small>Generated on {$smarty.now|date_format:'%A, %B %e, %Y %H:%M:%S'}.</small></p>
+	</footer>
+	
+	</body>
+</html>

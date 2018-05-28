@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: BentonSans;
+    src: url(../Fonts/BentonSans-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: Quarto;
+    src: url(../Fonts/Quarto-Black.woff) format('woff');
+}
+
+body {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: column;
+    flex-flow: column;
+    flex-wrap: wrap;
+
+    font-family: BentonSans;
+    font-size: 1em;
+    line-height: 1.4em;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.hero {
+    position: relative;
+    background-image: url("../Images/hero.jpg");
+    background-size: cover;
+    height: 16em;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1.2em;
+    font-family: Quarto;
+    color: #ffffff;
+}
+
+.hero h1 {
+    position: absolute;
+    left: 0.3em;
+    bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2em;
+    font-family: Quarto;
+    color: #ffffff;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-family: Quarto;
+    color: #ffffff;
+}
+
+.black-text {
+    color: #333333;
+}
+
+.black-text h1,.black-text h2,.black-text h3,.black-text.travel-option p, .black-text a,.black-text.travel-option li::before{
+    color: #333333;
+}
+
+.buttons-row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row;
+    flex-flow: row;
+}
+
+.big-button {
+    height: 7em;
+    flex: 1 0 0;
+    width: 50%;
+
+    display: -webkit-box;   
+    display: -moz-box;   
+    display: -ms-flexbox;   
+    display: -webkit-flex;   
+    display: flex;   
+    -webkit-box-align: center;   
+    -moz-box-align: center;   
+    -ms-flex-align: center;   
+    -webkit-align-items: center;   
+    align-items: center;   
+    -webkit-box-pack: center;   
+    -moz-box-pack: center;   
+    -ms-flex-pack: center;   
+    -webkit-justify-content: center;   
+    justify-content: center;   
+}
+
+.big-button a{
+    display: block;
+    width: 100%;
+}
+
+.big-button h2{
+   font-size: 1.4em;
+   line-height: 4.8em; 
+   text-align: center;
+}
+
+span.adress {
+    font-weight: bold;
+    font-size: 1.6em;
+    line-height: 2em;
+}
+
+.purple {
+    background-color: #6c21c0;
+}
+
+.purple .travel-option li {
+    background-color: #5b17a6;
+}
+
+.blue {
+    background-color: #24c1f6;
+}
+
+.blue .travel-option li {
+    background-color: #00a1db;
+}
+
+.yellow {
+    background-color: #ffe322;
+}
+
+.yellow .travel-option li {
+    background-color: #f2d600;
+}
+
+.orange {
+    background-color: #f88400;
+}
+
+.orange .travel-option li {
+    background-color: #de7a00;
+}
+
+h2.list-title {
+    line-height: 3.75em;
+    margin-left: 1em;
+}
+
+.back {
+    float: left;
+    margin: 3.2em 1em 2.75em 1em;
+}
+
+.travel-option ol {
+    counter-reset: my-counter;  
+}
+
+.travel-option li {
+    padding: 1.6em 1.2em 0.5em 0;
+    margin-top: 2px;
+    list-style: none;
+}
+
+.travel-option li::before {
+    counter-increment: my-counter;  
+    content: counter(my-counter);
+    font-family: Quarto;
+    font-size: 1.5em;
+    color: #ffffff;
+    float: left;
+    margin: 0.4em 0 0 0.8em
+}
+
+.travel-option p {
+    color: #ffffff;
+    font-size: 0.8em;
+    line-height: 1.4em;
+    margin: 1em auto 1em 9em;
+}
+
+.travel-option p:after {
+    clear: both;
+}
+
+.travel-option li img {
+    float: left;
+    margin: auto 1.2em;
+}
+
+footer {
+    height: 9em;
+    background-color: #ffffff;
+}
+
+footer p {
+    margin: 1em 0 1em 1em;
+}
+
+.fsp-wrapper {
+    position: fixed;
+    left: 0;
+    right:0;    
+    top: 0;
+    bottom:0;
+    background-image: url("../Images/800-show.jpg");
+    background-size: cover;
+}
+
+.fsp-wrapper.800-show {
+    background-image: url("../Images/800-show.jpg");
+}
+
+.fsp-wrapper.subway {
+    background-image: url("../Images/subway.jpg");
+    background-position: center center;
+}
+
+.fsp-wrapper.bus-stop {
+    background-image: url("../Images/bus-stop.jpg");
+    background-position: center center;
+}
+
+.fsp-wrapper.statue {
+    background-image: url("../Images/statue.jpg");
+    background-position: center right;
+}
+
+.fsp-wrapper.barrier {
+    background-image: url("../Images/barrier.jpg");
+    background-position: center center;
+}
+
+.fsp-wrapper.building6 {
+    background-image: url("../Images/building6.jpg");
+    background-position: center center;
+}
+
+.fsp-wrapper.level3 {
+    background-image: url("../Images/level3.jpg");
+    background-position: left center;
+}
+
+.fsp-wrapper.success {
+    background-image: url("../Images/frog.jpg");
+    background-position: center center;
+}
+
+.fsp-content {
+    background-color: rgba(0,0,0,0.5);
+    display: -webkit-box;   
+    display: -moz-box;   
+    display: -ms-flexbox;   
+    display: -webkit-flex;   
+    display: flex;   
+    -webkit-box-align: center;   
+    -moz-box-align: center;   
+    -ms-flex-align: center;   
+    -webkit-align-items: center;   
+    align-items: center;   
+    -webkit-box-pack: center;   
+    -moz-box-pack: center;   
+    -ms-flex-pack: center;   
+    -webkit-justify-content: center;   
+    justify-content: center; 
+}
+
+.popup h2 {
+    padding: 0.5em;
+    line-height: 1.2em;
+}
+
+.popup p {
+    padding: 1em;
+    color: #ffffff;
+}
+
+a.fsp-close {
+    font-size: 2em;
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 0;
+/*    margin: 1em;*/
+    padding: 1em;
+    text-shadow: 0px 0px 8px #000000;
+}

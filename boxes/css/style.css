@@ -1,0 +1,195 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-size: 1em;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background-color: #f5f2ef;
+}
+
+#wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+#hero {
+  height: 0;
+  padding-bottom: 50%;
+  margin: 0 20px;
+  position: relative;
+}
+
+#hero .box {
+  width: 100%;
+  height: 0px;
+  padding-bottom: 100%;
+}
+
+#hero .tag {
+  box-sizing: border-box;
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  padding: 80px 20px;
+}
+
+#flexlayout {
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 0;
+  position: relative;
+}
+
+.half_w {
+  float: left;
+  width: 50%;
+}
+
+img.sizer {
+  display: block;
+  width: 100%;
+  height: auto;
+  visibility: hidden;
+}
+
+.square {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.center {
+  display: table;
+  width: 100.2%;
+  /*rounding bug in chrome */
+  height: 100.2%;
+}
+
+.center .centered {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hrect {
+  float: left;
+  width: 100%;
+  height: 0;
+  padding-bottom: 200%;
+  position: relative;
+}
+
+.shift {
+  overflow: visible;
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.half_w {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    height: auto;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  #hero .box {
+    height: 0px;
+    padding-bottom: 50%;
+    position: relative;
+  }
+
+  #hero .tag {
+    width: 100%;
+    position: static;
+  }
+
+  #wrapper {
+    width: 100%;
+  }
+
+  #flexlayout > .half_w {
+    width: 100%;
+  }
+
+  img.sizer {
+    display: none;
+  }
+
+  .shift {
+    position: static;
+    height: auto;
+    top: 0;
+  }
+
+  .shift > .half_w {
+    position: static;
+  }
+}

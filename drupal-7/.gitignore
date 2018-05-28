@@ -1,0 +1,13 @@
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+sites/sites.php
+techtrends2014/
+techtrends2014/*
+techtrends2014
+techtrends2015/sites/default/files/advagg_css/*.css
+techtrends2015/sites/default/files/advagg_css/*.gz
+techtrends2015/inc/db.inc.php
